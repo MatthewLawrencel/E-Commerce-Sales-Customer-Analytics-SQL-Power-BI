@@ -212,40 +212,41 @@ It mirrors how analytics pipelines work in real companies.
 
 ##  Repository Structure
 
-│───LICENSE
-│───README.md
+your-project/
 │
-├───Dashboard
-│       customer_analytics.png
-│       Ecommerce_Analytics_Dashboard.pbix
-│       product_performance.png
-│       sales_overview.png
+├── 📄 **LICENSE** - MIT License
+├── 📄 **README.md** - Project documentation and instructions
 │
-├───data
-│       olist_customers_dataset.csv
-│       olist_geolocation_dataset.csv
-│       olist_orders_dataset.csv
-│       olist_order_items_dataset.csv
-│       olist_order_payments_dataset.csv
-│       olist_order_reviews_dataset.csv
-│       olist_products_dataset.csv
-│       olist_sellers_dataset.csv
-│       product_category_name_translation.csv
+├── 📁 **Dashboard/**
+│   ├── 📊 customer_analytics.png
+│   ├── 📊 Ecommerce_Analytics_Dashboard.pbix (Power BI file)
+│   ├── 📊 product_performance.png
+│   └── 📊 sales_overview.png
 │
-├───Insights
-│       business_insights.md
+├── 📁 **data/** (Raw Olist datasets)
+│   ├── 🗃️ olist_customers_dataset.csv
+│   ├── 🗃️ olist_geolocation_dataset.csv
+│   ├── 🗃️ olist_orders_dataset.csv
+│   ├── 🗃️ olist_order_items_dataset.csv
+│   ├── 🗃️ olist_order_payments_dataset.csv
+│   ├── 🗃️ olist_order_reviews_dataset.csv
+│   ├── 🗃️ olist_products_dataset.csv
+│   ├── 🗃️ olist_sellers_dataset.csv
+│   └── 🗃️ product_category_name_translation.csv
 │
-└───sql
-        01_create_database.sql.sql
-        02_create_raw_tables.sql.sql
-        03_bulk_insert.sql.sql
-        04_clean_tables.sql.sql
-        05_business_queries.sql.sql
-        06_rfm_analysis.sql.sql
-        07_cohort_analysis.sql.sql
-        08_views.sql.sql
-        09_geolocation_extension.sql.sql
-
+├── 📁 **Insights/**
+│   └── 📝 business_insights.md 
+│
+└── 📁 **sql/** (Data pipeline and analysis scripts)
+    ├── 🛠️ 01_create_database.sql
+    ├── 🛠️ 02_create_raw_tables.sql
+    ├── 🛠️ 03_bulk_insert.sql
+    ├── 🛠️ 04_clean_tables.sql
+    ├── 📊 05_business_queries.sql
+    ├── 📈 06_rfm_analysis.sql (Recency, Frequency, Monetary)
+    ├── 📈 07_cohort_analysis.sql
+    ├── 🖼️ 08_views.sql
+    └── 🌍 09_geolocation_extension.sql
 
 
 ---
