@@ -75,7 +75,7 @@ Power BI Dashboards & Insights
 
 ------------------------------------------------------------------------
 
-## 🔨 Project Steps
+##  Project Steps
 
 ### 1️⃣ Database Setup
 
