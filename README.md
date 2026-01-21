@@ -61,17 +61,18 @@ Real transactional e-commerce data.
 
 ##  Project Architecture
 
-CSV Files (Kaggle)
+CSV Files (Kaggle)\
 ↓\
-Raw Tables (TEXT columns)
+Raw Tables (TEXT columns)\
 ↓\
-Clean Tables (Typed + Cleaned)
+Clean Tables (Typed + Cleaned)\
 ↓\
-Analytics Tables (RFM, Cohorts)
+Analytics Tables (RFM, Cohorts)\
 ↓\
-Business Queries & Views
+Business Queries & Views\
 ↓\
 Power BI Dashboards & Insights
+
 
 ------------------------------------------------------------------------
 
