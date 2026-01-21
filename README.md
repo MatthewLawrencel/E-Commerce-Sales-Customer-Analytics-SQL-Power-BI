@@ -9,10 +9,10 @@
 Build an end-to-end analytics solution using real e-commerce data to
 analyze:
 
--   Sales performance\
--   Customer behavior\
--   Retention & repeat purchases\
--   Customer lifetime value (LTV)\
+-   Sales performance
+-   Customer behavior
+-   Retention & repeat purchases
+-   Customer lifetime value (LTV)
 -   Product & category performance
 
 This project demonstrates a complete analytics workflow:
@@ -29,48 +29,47 @@ It mirrors how analytics pipelines are built in real companies.
 **Brazilian E-Commerce Public Dataset by Olist (Kaggle)**\
 Real transactional e-commerce data.
 
--   \~100,000 orders\
--   8+ CSV files\
+-   \~100,000 orders
+-   8+ CSV files
 -   Covers customers, orders, products, sellers, payments, and reviews
 
 ### Files Used
 
--   `olist_customers_dataset.csv`\
--   `olist_orders_dataset.csv`\
--   `olist_order_items_dataset.csv`\
--   `olist_order_payments_dataset.csv`\
--   `olist_products_dataset.csv`\
--   `olist_sellers_dataset.csv`\
--   `olist_order_reviews_dataset.csv`\
--   `product_category_name_translation.csv`\
--   `olist_geolocation_dataset.csv` *(loaded for future spatial
-    analysis)*
+-   `olist_customers_dataset.csv`
+-   `olist_orders_dataset.csv`
+-   `olist_order_items_dataset.csv`
+-   `olist_order_payments_dataset.csv`
+-   `olist_products_dataset.csv`
+-   `olist_sellers_dataset.csv`
+-   `olist_order_reviews_dataset.csv`
+-   `product_category_name_translation.csv`
+-   `olist_geolocation_dataset.csv` 
 
 ------------------------------------------------------------------------
 
 ##  Tech Stack
 
--   MS SQL Server\
--   SQL\
--   Data Modeling\
--   Data Cleaning & Transformation\
--   Business Analytics\
--   Power BI\
+-   MS SQL Server
+-   SQL
+-   Data Modeling
+-   Data Cleaning & Transformation
+-   Business Analytics
+-   Power BI
 -   Kaggle Dataset
 
 ------------------------------------------------------------------------
 
 ##  Project Architecture
 
-CSV Files (Kaggle)\
+CSV Files (Kaggle)
 ↓\
-Raw Tables (TEXT columns)\
+Raw Tables (TEXT columns)
 ↓\
-Clean Tables (Typed + Cleaned)\
+Clean Tables (Typed + Cleaned)
 ↓\
-Analytics Tables (RFM, Cohorts)\
+Analytics Tables (RFM, Cohorts)
 ↓\
-Business Queries & Views\
+Business Queries & Views
 ↓\
 Power BI Dashboards & Insights
 
@@ -80,19 +79,19 @@ Power BI Dashboards & Insights
 
 ### 1️⃣ Database Setup
 
--   Created project database: `EcommerceAnalytics`\
--   Designed raw tables with all columns as `NVARCHAR`\
+-   Created project database: `EcommerceAnalytics`
+-   Designed raw tables with all columns as `NVARCHAR`
     to handle messy real-world data safely
 
 ------------------------------------------------------------------------
 
 ### 2️⃣ Raw Data Ingestion
 
--   Loaded all CSV files using `BULK INSERT`\
+-   Loaded all CSV files using `BULK INSERT`
 -   Handled:
-    -   Encoding issues\
-    -   Truncation errors\
-    -   Type mismatches\
+    -   Encoding issues
+    -   Truncation errors
+    -   Type mismatches
 -   Verified row counts matched source files
 
 ------------------------------------------------------------------------
@@ -101,25 +100,25 @@ Power BI Dashboards & Insights
 
 Created clean analytics tables using:
 
--   `TRY_CAST()`\
--   Trimming (`LTRIM`, `RTRIM`)\
+-   `TRY_CAST()`
+-   Trimming (`LTRIM`, `RTRIM`)
 -   Safe datetime conversions
 
 Clean tables created:
 
--   `customers_clean`\
--   `orders_clean`\
--   `order_items_clean`\
--   `payments_clean`\
--   `products_clean`\
--   `sellers_clean`\
+-   `customers_clean`
+-   `orders_clean`
+-   `order_items_clean`
+-   `payments_clean`
+-   `products_clean`
+-   `sellers_clean`
 -   `reviews_clean`
 
 Handled:
 
--   Invalid numeric values\
--   Dirty ZIP codes\
--   Broken timestamps\
+-   Invalid numeric values
+-   Dirty ZIP codes
+-   Broken timestamps
 -   Text trimming & standardization
 
 ------------------------------------------------------------------------
@@ -128,13 +127,13 @@ Handled:
 
 Implemented core business metrics:
 
--   Total Orders\
--   Total Revenue\
--   Average Order Value (AOV)\
--   Customer Lifetime Value (LTV)\
--   Repeat vs One-time Customers\
--   Monthly Revenue Trend\
--   Top Products by Revenue\
+-   Total Orders
+-   Total Revenue
+-   Average Order Value (AOV)
+-   Customer Lifetime Value (LTV)
+-   Repeat vs One-time Customers
+-   Monthly Revenue Trend
+-   Top Products by Revenue
 -   Top Categories by Revenue
 
 ------------------------------------------------------------------------
@@ -145,30 +144,30 @@ Implemented core business metrics:
 
 Segmented customers based on:
 
--   **Recency** → Days since last purchase\
--   **Frequency** → Number of orders\
+-   **Recency** → Days since last purchase
+-   **Frequency** → Number of orders
 -   **Monetary** → Total spend
 
 Implemented using `NTILE()` scoring.
 
 Tables:
 
--   `rfm_base`\
--   `rfm_scores`\
+-   `rfm_base`
+-   `rfm_scores`
 -   `rfm_final`
 
 ------------------------------------------------------------------------
 
 ####  Cohort Analysis
 
--   Grouped customers by first purchase month\
--   Tracked monthly retention behavior\
+-   Grouped customers by first purchase month
+-   Tracked monthly retention behavior
 -   Built cohort retention table
 
 Tables:
 
--   `customer_cohorts`\
--   `cohort_orders`\
+-   `customer_cohorts`
+-   `cohort_orders`
 -   `cohort_analysis`
 
 ------------------------------------------------------------------------
@@ -177,7 +176,7 @@ Tables:
 
 Created production-style SQL views for reporting:
 
--   `vw_sales_summary`\
+-   `vw_sales_summary`
 -   `vw_customer_ltv`
 
 These views are used directly by Power BI dashboards.
@@ -186,10 +185,10 @@ These views are used directly by Power BI dashboards.
 
 ##  Key Insights
 
--   Identified top 10 products and categories by revenue\
--   Discovered high-value customers using lifetime value (LTV)\
--   Found that most customers are one-time buyers\
--   Observed declining retention in later cohorts\
+-   Identified top 10 products and categories by revenue
+-   Discovered high-value customers using lifetime value (LTV)
+-   Found that most customers are one-time buyers
+-   Observed declining retention in later cohorts
 -   Segmented VIP customers using RFM analysis
 
 ------------------------------------------------------------------------
@@ -198,11 +197,11 @@ These views are used directly by Power BI dashboards.
 
 This project demonstrates:
 
--   Real-world data ingestion\
--   Data cleaning & transformation\
--   Business analytics\
--   Customer segmentation\
--   Retention analysis\
+-   Real-world data ingestion
+-   Data cleaning & transformation
+-   Business analytics
+-   Customer segmentation
+-   Retention analysis
 -   BI-ready data modeling
 
 It mirrors how analytics pipelines work in real companies.
